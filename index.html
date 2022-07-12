@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id=main>
+<p>Es gibt im Moment in diese Mannschaft, oh, einige Spieler vergessen ihnen Profi was sie sind. Ich lese nicht sehr viele Zeitungen, aber ich habe gehört viele Situationen. Erstens: wir haben nicht offensiv gespielt. Es gibt keine deutsche Mannschaft spielt offensiv und die Name offensiv wie Bayern. Letzte Spiel hatten wir in Platz drei Spitzen: Elber, Jancka und dann Zickler. Wir müssen nicht vergessen Zickler. Zickler ist eine Spitzen mehr, Mehmet eh mehr Basler. Ist klar diese Wörter, ist möglich verstehen, was ich hab gesagt? Danke. Offensiv, offensiv ist wie machen wir in Platz. Zweitens: ich habe erklärt mit diese zwei Spieler: nach Dortmund brauchen vielleicht Halbzeit Pause. Ich habe auch andere Mannschaften gesehen in Europa nach diese Mittwoch. Ich habe gesehen auch zwei Tage die Training. Ein Trainer ist nicht ein Idiot! Ein Trainer sei sehen was passieren in Platz. In diese Spiel es waren zwei, drei diese Spieler waren schwach wie eine Flasche leer! Haben Sie gesehen Mittwoch, welche Mannschaft hat gespielt Mittwoch? Hat gespielt Mehmet oder gespielt Basler oder hat gespielt Trapattoni? Diese Spieler beklagen mehr als sie spielen! Wissen Sie, warum die Italienmannschaften kaufen nicht diese Spieler? Weil wir haben gesehen viele Male solche Spiel! Haben</p>
+
+<p>The body element's child nodes are:</p>
+</div>
+<p id="demo"></p>
+
+<script>
+
+function br(word) {
+let end;
+	if (word.length <= 3) {
+    	end = 0;
+    } else if (word.length == 4) {
+    	end = 1;
+    } else {
+        end = Math.ceil(word.length*2/5);
+    }
+    
+    return "<b>"+word.slice(0,end+1)+"</b>"+word.slice(end+1,word.length);
+    
+}
+
+const nodeList = document.getElementById("main").childNodes;
+
+let text = "";
+for (let i = 0; i < nodeList.length; i++) {
+	if (nodeList[i].innerText) {
+    	let split = nodeList[i].innerText.split(/(?:-| |:)+/) 
+        for (let j = 0; j < split.length; j++) {
+  			text += br(split[j]) + " ";
+        }
+        text += "\n\n";       
+  	}
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
